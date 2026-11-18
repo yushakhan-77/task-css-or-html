@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Combinators</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #eef2f7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 800px;
+        }
+
+        h2 {
+            color: darkred;
+        }
+
+        /* Descendant Combinator */
+        .box p {
+            color: blue;
+        }
+
+        /* Child Combinator */
+        .parent > p {
+            color: green;
+        }
+
+        /* Adjacent Sibling */
+        h3 + p {
+            color: red;
+        }
+
+        /* General Sibling */
+        h4 ~ p {
+            color: purple;
+        }
+
+        .demo {
+            background-color: #eeeeee;
+            padding: 15px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>CSS COMBINATORS</h1>
+
+<div class="container">
+
+    <h2>1. Descendant Combinator (Space)</h2>
+
+    <p>It selects all elements inside another element.</p>
+
+    <div class="box demo">
+        <p>First Paragraph</p>
+        <div>
+            <p>Nested Paragraph</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <h2>2. Child Combinator (>)</h2>
+
+    <p>It selects only direct children.</p>
+
+    <div class="parent demo">
+        <p>Direct Child</p>
+
+        <div>
+            <p>Nested Child</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <h2>3. Adjacent Sibling (+)</h2>
+
+    <p>It selects the first element immediately after another element.</p>
+
+    <div class="demo">
+        <h3>Heading</h3>
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <h2>4. General Sibling (~)</h2>
+
+    <p>It selects all matching siblings after an element.</p>
+
+    <div class="demo">
+        <h4>Heading</h4>
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+        <p>Third Paragraph</p>
+    </div>
+
+</div>
+
+<div class="container">
+    <h2>Conclusion</h2>
+
+    <p>
+        CSS Combinators help us select HTML
+        elements according to their relationships.
+        There are four main types of combinators.
+    </p>
+</div>
+
+</body>
+</html>

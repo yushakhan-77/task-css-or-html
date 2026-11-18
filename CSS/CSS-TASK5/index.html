@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Art Gallery</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #101018;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+#o {
+    width: 100%;
+    height: 250px;
+    background: url("https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1400") center/cover;
+    text-align: center;
+    padding: 70px 10px;
+}
+
+#o h1 {
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+#search {
+    width: 280px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+}
+
+h3 {
+    text-align: center;
+    margin: 25px;
+    color: #b58aff;
+    letter-spacing: 3px;
+}
+
+.gallery {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.card {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #393044;
+    transition: 0.4s;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px #9b50ff55;
+}
+
+.card:hover img {
+    transform: scale(1.08);
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent 20%,
+        rgba(0,0,0,0.9)
+    );
+    pointer-events: none;
+}
+
+.info {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    z-index: 2;
+}
+
+.info h2 {
+    font-size: 17px;
+}
+
+.info p {
+    color: #ddd;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+.info a {
+    display: inline-block;
+    color: #c9a5ff;
+    font-size: 12px;
+    margin-top: 8px;
+    text-decoration: none;
+}
+
+.info a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+#noResult {
+    display: none;
+    text-align: center;
+    padding: 50px;
+    color: #aaa;
+    grid-column: 1 / -1;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #999;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div id="o">
+    <h1>Simply, Art, Simply, Beautiful</h1>
+
+    <input
+        type="search"
+        id="search"
+        placeholder="Search images..."
+    >
+</div>
+
+<h3>CATEGORIES</h3>
+
+<!-- GALLERY -->
+
+<div class="gallery" id="gallery">
+
+    <div class="card" data-name="web development coding computer">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700" alt="Web Development">
+        <div class="info">
+            <h2>WEB DEVELOPMENT</h2>
+            <p>Build Something Amazing</p>
+            <a href="https://www.google.com/search?tbm=isch&q=web+development+art" target="_blank">Google Images ↗</a>
+        </div>
+    </div>
+
+    <div class="card" data-name="anime vibes cartoon">
+        <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=700" alt="Anime">
+        <div class="info">
+            <h2>ANIME VIBES</h2>
+            <p>Dream Big</p>
+            <a href="https://www.google.com/search?tbm=isch&q=anime+art" target="_blank">Google Images ↗</a>
+        </div>
+    </div>
+
+    <div class="card" data-name="royal style king crown">
+        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=700" alt="Royal Style">
+        <div class="info">
+            <h2>ROYAL STYLE</h2>
+            <p>Be a King</p>
+            <a href="https://www.google.com/search?tbm=isch&q=royal+crown+art" target="_blank">Google Images ↗</a>
+        </div>
+    </div>
+
+    <div class="card" data-name="night sky moon stars">
+        <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=700" alt="Night Sky">
+        <div class="info">
+            <h2>NIGHT SKY</h2>
+            <p>Feel the Peace</p>
+            <a href="https://www.google.com/search?tbm=isch&q=night+sky" target="_blank">Google Images ↗</a>
+        </div>
+    </div>
+
+    <div class="card" data-name="cars luxury sports car">
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=700" alt="Cars">
+        <div class="info">
+            <h2>CARS</h2>
+            <p>Drive Your Dream</p>
+            <a href="https://www.google.com/search?tbm=isch&q=luxury+cars" target="_blank">Google Images ↗</a>
+        </div>
+    </div>
+
+    <div class="card" data-name="bikes motorcycle">
+        <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=700" alt="Bikes">
+        <div class="info">
+            <h2>BIKES</h2>
+            <p>Ride the Power</p>
+            <a href="https://www.google.com/search?tbm=isch&q=sports+bikes" target="_blank">Google Images ↗</a>
+        </div>
+    </div>
+
+    <div class="card" data-name="anime symbol uchiha">
+        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=700" alt="Anime Symbol">
+        <div class="info">
+            <h2>ANIME SYMBOL</h2>
+            <p>Forever Uchiha</p>
+            <a href="https://www.google.com/search?tbm=isch&q=anime+symbols" target="_blank">Google Images ↗</a>
+        </div>
+    </div>
+
+    <div class="card" data-name="gaming computer setup">
+        <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=700" alt="Gaming">
+        <div class="info">
+            <h2>GAMING</h2>
+            <p>Play Hard</p>
+            <a href="https://www.google.com/search?tbm=isch&q=gaming+setup" target="_blank">Google Images ↗</a>
+        </div>
+    </div>
+
+    <div class="card" data-name="flowers nature garden">
+        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=700" alt="Flowers">
+        <div class="info">
+            <h2>FLOWERS</h2>
+            <p>Beauty in Nature</p>
+            <a href="https://www.google.com/search?tbm=isch&q=beautiful+flowers" target="_blank">Google Images ↗</a>
+        </div>
+    </div>
+
+    <div class="card" data-name="sunset sunrise">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=700" alt="Sunset">
+        <div class="info">
+            <h2>SUNSET</h2>
+            <p>Endless Beauty</p>
+            <a href="https://www.google.com/search?tbm=isch&q=beautiful+sunset" target="_blank">Google Images ↗</a>
+        </div>
+    </div>
+
+    <div class="card" data-name="dragon fantasy">
+        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=700" alt="Dragon">
+        <div class="info">
+            <h2>DRAGON</h2>
+            <p>Unleash the Power</p>
+            <a href="https://www.google.com/search?tbm=isch&q=fantasy+dragon+art" target="_blank">Google Images ↗</a>
+        </div>
+    </div>
+
+    <div class="card" data-name="luxury home interior">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=700" alt="Luxury Home">
+        <div class="info">
+            <h2>LUXURY HOME</h2>
+            <p>Live in Style</p>
+            <a href="https://www.google.com/search?tbm=isch&q=luxury+home+interior" target="_blank">Google Images ↗</a>
+        </div>
+    </div>
+
+    <div class="card" data-name="space planets galaxy">
+        <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=700" alt="Space">
+        <div class="info">
+            <h2>SPACE</h2>
+            <p>Beyond Limits</p>
+            <a href="https://www.google.com/search?tbm=isch&q=space+galaxy" target="_blank">Google Images ↗</a>
+        </div>
+    </div>
+
+    <div class="card" data-name="mystery forest dark">
+        <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=700" alt="Mystery">
+        <div class="info">
+            <h2>MYSTERY</h2>
+            <p>Stay Silent</p>
+            <a href="https://www.google.com/search?tbm=isch&q=mystery+forest" target="_blank">Google Images ↗</a>
+        </div>
+    </div>
+
+    <div class="card" data-name="nature mountains landscape">
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=700" alt="Nature">
+        <div class="info">
+            <h2>NATURE</h2>
+            <p>Explore More</p>
+            <a href="https://www.google.com/search?tbm=isch&q=beautiful+nature" target="_blank">Google Images ↗</a>
+        </div>
+    </div>
+
+    <div class="card" data-name="king vibes royal">
+        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=700" alt="King Vibes">
+        <div class="info">
+            <h2>KING VIBES</h2>
+            <p>Rule Your World</p>
+            <a href="https://www.google.com/search?tbm=isch&q=king+royal+art" target="_blank">Google Images ↗</a>
+        </div>
+    </div>
+
+    <div id="noResult">
+        <h2>No Images Found!</h2>
+        <p>Try another search.</p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Creative World | Made with Creativity
+</footer>
+
+</body>
+</html>
+
